@@ -39,6 +39,7 @@ type objectFileBoxDefinition struct {
 type objectPointerFileEntry struct {
 	objectID string `csv:"objID"`
 	filePath string `csv:"file"`
+	any string `csv:",any"`
 }
 
 func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
@@ -52,8 +53,9 @@ func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
 		log.Fatal("'", pointerFilePath, "' is an invalid object pointer file: ", err)
 	}
 	for _, entry := range fileEntries {
+		println(entry.any)
 		if entry.objectID == "" || entry.filePath == "" {
-			log.Fatal("'", pointerFilePath, "' is an invalid object pointer file: ", err)
+			log.Fatal("'", pointerFilePath, "' is an invalid object pointer file")
 		}
 		e.LoadObjectFile(path.Join(path.Dir(pointerFilePath), entry.filePath), entry.objectID)
 	}
