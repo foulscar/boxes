@@ -84,7 +84,7 @@ func (e *Engine) LoadObjectFile(filepath, objectID string) {
 
 		obj.Boxes[i] = ObjectBox{
 			Matrix:   matrix,
-			Material: &mat,
+			Material: mat,
 		}
 	}
 
