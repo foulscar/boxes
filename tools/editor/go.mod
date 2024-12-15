@@ -6,7 +6,7 @@ require github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c
 
 require (
 	github.com/ebitengine/purego v0.7.1 // indirect
-	github.com/foulscar/boxes v0.0.0-20241215041752-2a10bde4e62a // indirect
+	github.com/foulscar/boxes v0.0.0-20241215042408-537429ee48f2 // indirect
 	github.com/mokiat/go-data-front v0.2.0 // indirect
 	github.com/trimmer-io/go-csv v1.0.0 // indirect
 	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842 // indirect
