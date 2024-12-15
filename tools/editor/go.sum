@@ -2,6 +2,8 @@ github.com/ebitengine/purego v0.7.1 h1:6/55d26lG3o9VCZX8lping+bZcmShseiqlh2bnUDi
 github.com/ebitengine/purego v0.7.1/go.mod h1:ah1In8AOtksoNK6yk5z1HTJeUkC1Ez4Wk2idgGslMwQ=
 github.com/foulscar/boxes v0.0.0-20241215032101-b256c71c9807 h1:RBn8x3HHPLhSlACAciyfsUxa39gSjgCDU9xH9JJVszQ=
 github.com/foulscar/boxes v0.0.0-20241215032101-b256c71c9807/go.mod h1:piWu3sBHs3waar7Xm9Ucvq/7mBsxseZY3KCqV9EnwkA=
+github.com/foulscar/boxes v0.0.0-20241215033131-354a0a0753c3 h1:nYEolwtU96ifgdWtf26h9Y0oBmXbxr9orBIztMNlhj8=
+github.com/foulscar/boxes v0.0.0-20241215033131-354a0a0753c3/go.mod h1:piWu3sBHs3waar7Xm9Ucvq/7mBsxseZY3KCqV9EnwkA=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c h1:mgrcIr6he2BCrCDVWRm7PUw5Ukx5ZUyCnAcAPN+y8cQ=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c/go.mod h1:BaY76bZk7nw1/kVOSQObPY1v1iwVE1KHAGMfvI6oK1Q=
 github.com/mokiat/go-data-front v0.2.0 h1:IDSwj9eEcFnKiWKyvGzrsmpxECK5T+qaBrpa/A0fzQg=
