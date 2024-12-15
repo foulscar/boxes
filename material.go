@@ -20,6 +20,7 @@ func (e *Engine) LoadMaterials(filepath string) {
 	}
 
 	file, err := os.Open(filepath)
+	defer file.Close()
 	if err != nil {
 		unloadOnError()
 		log.Fatal("Could not open '", filepath, "' to load materials")
