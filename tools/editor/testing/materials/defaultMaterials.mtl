@@ -1,0 +1,7 @@
+newmtl SolidBeige    # ID: 0
+Ka 0.96 0.87 0.70    # Ambient color (beige)
+Kd 0.96 0.87 0.70    # Diffuse color (beige)
+Ks 0.00 0.00 0.00    # Specular color (none for a matte look)
+Ns 10.0              # Specular exponent (low for matte surface)
+d 0.2               # Opacity (75% opaque)
+illum 2              # Illumination model (basic shading)
