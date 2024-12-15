@@ -14,6 +14,8 @@ github.com/foulscar/boxes v0.0.0-20241215042526-45e99b43ecad h1:5fwOPs9+87pKt7wY
 github.com/foulscar/boxes v0.0.0-20241215042526-45e99b43ecad/go.mod h1:piWu3sBHs3waar7Xm9Ucvq/7mBsxseZY3KCqV9EnwkA=
 github.com/foulscar/boxes v0.0.0-20241215042652-8db6e42cfa1a h1:+h1a/UMS2APyNuy2FxN/znbMtSJkVdp4H1Ppf446KQo=
 github.com/foulscar/boxes v0.0.0-20241215042652-8db6e42cfa1a/go.mod h1:piWu3sBHs3waar7Xm9Ucvq/7mBsxseZY3KCqV9EnwkA=
+github.com/foulscar/boxes v0.0.0-20241215043307-02b1d4580d97 h1:5mHnMWiesLvuA7orvdvUtfZmJ+lH3L6JkNJna+eE5u0=
+github.com/foulscar/boxes v0.0.0-20241215043307-02b1d4580d97/go.mod h1:piWu3sBHs3waar7Xm9Ucvq/7mBsxseZY3KCqV9EnwkA=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c h1:mgrcIr6he2BCrCDVWRm7PUw5Ukx5ZUyCnAcAPN+y8cQ=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c/go.mod h1:BaY76bZk7nw1/kVOSQObPY1v1iwVE1KHAGMfvI6oK1Q=
 github.com/mokiat/go-data-front v0.2.0 h1:IDSwj9eEcFnKiWKyvGzrsmpxECK5T+qaBrpa/A0fzQg=
