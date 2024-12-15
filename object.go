@@ -57,6 +57,9 @@ func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
 }
 
 func (e *Engine) LoadObjectFile(filepath, objectID string) {
+	if e.ResourceManager.Objects == nil {
+		log.Fatal("The Resource Manager has not been initialized")
+	}
 	bytes, err := os.ReadFile(filepath)
 	if err != nil {
 		log.Fatal("Could not read object file: '", filepath, "': ", err)

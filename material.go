@@ -10,6 +10,10 @@ import (
 )
 
 func (e *Engine) LoadMaterials(filepath string) {
+	if e.ResourceManager.Materials == nil {
+		log.Fatal("The Resource Manager has not been initialized")
+	}
+
 	materials := rl.LoadMaterials(filepath)
 	matIDs    := make([]string, 0)
 
