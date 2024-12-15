@@ -11,7 +11,7 @@ type ResourceManager struct {
 	Materials map[string]rl.Material
 }
 
-func (e Engine) initResourceManager() {
+func (e *Engine) initResourceManager() {
 	rm := ResourceManager{
 		IdentityMatrix: rl.MatrixIdentity(),
 		CubeMesh:  rl.GenMeshCube(1, 1, 1),
