@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/foulscar/boxes"
+	b  "github.com/foulscar/boxes"
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
