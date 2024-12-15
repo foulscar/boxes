@@ -6,7 +6,7 @@ import (
 	"path"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
-	csv "github.com/trimmer-io/go-csv"
+	csv "github.com/gocarina/gocsv"
 )
 
 type ObjectBox struct {
@@ -42,18 +42,17 @@ type objectPointerFileEntry struct {
 }
 
 func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
-	bytes, err := os.ReadFile(pointerFilePath)	
+	ptrFile, err := os.OpenFile(pointerFilePath, os.O_RDWR|os.O_CREATE, os.ModePerm)	
 	if err != nil {
-		log.Fatal("Could not read object pointer file: '", pointerFilePath, "': ", err)
+		log.Fatal("Could not open object pointer file: '", pointerFilePath, "': ", err)
 	}
+	defer ptrFile.Close()
 	
-	fileEntries := make([]*objectPointerFileEntry, 0)
-	if err := csv.Unmarshal(bytes, &fileEntries); err != nil {
+	fileEntries := []*objectPointerFileEntry{}
+	if err := csv.UnmarshalFile(ptrFile, &fileEntries); err != nil {
 		log.Fatal("'", pointerFilePath, "' is an invalid object pointer file: ", err)
 	}
-	for _, entryPointer := range fileEntries {
-		entry := *entryPointer
-		println(entry.filePath)
+	for _, entry := range fileEntries {
 		if entry.objectID == "" || entry.filePath == "" {
 			log.Fatal("'", pointerFilePath, "' is an invalid object pointer file")
 		}
@@ -65,13 +64,14 @@ func (e *Engine) LoadObjectFile(filepath, objectID string) {
 	if e.ResourceManager.Objects == nil {
 		log.Fatal("The Resource Manager has not been initialized")
 	}
-	bytes, err := os.ReadFile(filepath)
+	objFile, err := os.OpenFile(filePath, os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
-		log.Fatal("Could not read object file: '", filepath, "': ", err)
+		log.Fatal("Could not open object file: '", filepath, "': ", err)
 	}
+	defer objFile.Close()
 
-	boxDefs := make([]*objectFileBoxDefinition, 0)
-	if err := csv.Unmarshal(bytes, &boxDefs); err != nil {
+	boxDefs := []*objectFileBoxDefinition{}
+	if err := csv.UnmarshalFile(bytes, &boxDefs); err != nil {
 		log.Fatal("'", filepath, "' is an invalid object file: ", err)
 	}
 
