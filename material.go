@@ -40,7 +40,7 @@ func (e *Engine) LoadMaterials(filepath string) {
 
 	println(materials)
 	println(matIDs)
-	for i, matID := range matIDs {
-		e.ResourceManager.Materials[matID] = materials[i]
+	for _, matID := range matIDs {
+		e.ResourceManager.Materials[matID] = materials[0]
 	}
 }
