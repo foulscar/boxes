@@ -6,24 +6,38 @@ import (
 )
 
 func runtimeHandler(e *b.Engine) {
-	camera := rl.Camera3D{}
-	camera.Position = rl.NewVector3(0, 2, 0)
-	camera.Target   = rl.NewVector3(0, 0, 0)
-	camera.Up       = rl.NewVector3(0, 1, 0)
-	camera.Fovy     = 60
-	camera.Projection = rl.CameraPerspective
+	camera := rl.NewCamera3D(
+		rl.NewVector3(10, 10, 10),
+		rl.NewVector3(0, 0, 0),
+		rl.NewVector3(0, 1, 0),
+		60,
+		rl.CameraPerspective,
+	)
 
-	mainScene := b.NewScene(camera)
+	mainScene := b.NewScene(&camera)
 	for _, obj := range e.ResourceManager.Objects {
 		e.InstiantiateObjectInScene(&mainScene, &obj)
 	}
 
 	editor := editor{
-		scene: &mainScene,
 		gridYLevel: 0,
+		scene: &mainScene,
 	}
 
-	for {
+	rl.DisableCursor()
+	rl.SetTargetFPS(60)
+
+	for !rl.WindowShouldClose() {
+		rl.UpdateCamera(&camera, rl.CameraFree)
+
+		if rl.IsKeyPressed(rl.KeyMinus) {
+			editor.gridYLevel--
+		}
+
+		if rl.IsKeyPressed(rl.KeyEqual) {
+			editor.gridYLevel++
+		}
+
 		rl.BeginDrawing()
 		rl.ClearBackground(rl.SkyBlue)
 		rl.BeginMode3D(camera)

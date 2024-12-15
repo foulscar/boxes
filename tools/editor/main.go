@@ -15,6 +15,8 @@ func main() {
 	defer rl.CloseWindow()
 
 	engine := b.LoadEngine()
+
+	engine.SetRuntimeHandler(runtimeHandler)
 	engine.LoadMaterials("./testing/materials/defaultMaterials.mtl")
 	engine.LoadObjectsFromPointerFile("./testing/objects/objects.csv")
 

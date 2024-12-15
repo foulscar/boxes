@@ -7,11 +7,11 @@ import (
 )
 
 type Scene struct {
-	Camera           rl.Camera3D
+	Camera           *rl.Camera3D
 	InstancedObjects map[int]InstancedObject
 }
 
-func NewScene(camera rl.Camera3D) Scene {
+func NewScene(camera *rl.Camera3D) Scene {
 	return Scene{
 		Camera:           camera,
 		InstancedObjects: make(map[int]InstancedObject),
