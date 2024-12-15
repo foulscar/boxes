@@ -2,7 +2,7 @@ package boxes
 
 type Engine struct {
 	ResourceManager *ResourceManager
-	RuntimeHandler func(*Engine)
+	RuntimeHandler  func(*Engine)
 }
 
 func LoadEngine() *Engine {

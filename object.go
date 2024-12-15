@@ -42,12 +42,12 @@ type objectPointerFileEntry struct {
 }
 
 func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
-	ptrFile, err := os.OpenFile(pointerFilePath, os.O_RDWR|os.O_CREATE, os.ModePerm)	
+	ptrFile, err := os.OpenFile(pointerFilePath, os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		log.Fatal("Could not open object pointer file: '", pointerFilePath, "': ", err)
 	}
 	defer ptrFile.Close()
-	
+
 	fileEntries := []*objectPointerFileEntry{}
 	if err := csv.UnmarshalFile(ptrFile, &fileEntries); err != nil {
 		log.Fatal("'", pointerFilePath, "' is an invalid object pointer file: ", err)
@@ -64,14 +64,14 @@ func (e *Engine) LoadObjectFile(filepath, objectID string) {
 	if e.ResourceManager.Objects == nil {
 		log.Fatal("The Resource Manager has not been initialized")
 	}
-	objFile, err := os.OpenFile(filePath, os.O_RDWR|os.O_CREATE, os.ModePerm)
+	objFile, err := os.OpenFile(filepath, os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		log.Fatal("Could not open object file: '", filepath, "': ", err)
 	}
 	defer objFile.Close()
 
 	boxDefs := []*objectFileBoxDefinition{}
-	if err := csv.UnmarshalFile(bytes, &boxDefs); err != nil {
+	if err := csv.UnmarshalFile(objFile, &boxDefs); err != nil {
 		log.Fatal("'", filepath, "' is an invalid object file: ", err)
 	}
 
@@ -88,7 +88,7 @@ func (e *Engine) LoadObjectFile(filepath, objectID string) {
 
 		matrix = rl.MatrixMultiply(matrix, rl.MatrixTranslate(boxDef.posX, boxDef.posY, boxDef.posZ))
 		matrix = rl.MatrixMultiply(matrix, rl.MatrixScale(boxDef.scaleX, boxDef.scaleY, boxDef.scaleZ))
-		matrix = rl.MatrixMultiply(matrix, rl.MatrixRotateXYZ(rl.NewVector3(boxDef.rotX,boxDef.rotY,boxDef.rotZ)))
+		matrix = rl.MatrixMultiply(matrix, rl.MatrixRotateXYZ(rl.NewVector3(boxDef.rotX, boxDef.rotY, boxDef.rotZ)))
 
 		obj.Boxes[i] = ObjectBox{
 			Matrix:   matrix,

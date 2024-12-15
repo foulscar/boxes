@@ -1,10 +1,10 @@
 package boxes
 
 import (
-	"os"
 	"log"
+	"os"
 
-	rl  "github.com/gen2brain/raylib-go/raylib"
+	rl "github.com/gen2brain/raylib-go/raylib"
 	common "github.com/mokiat/go-data-front/common"
 	mtl "github.com/mokiat/go-data-front/scanner/mtl"
 )
@@ -15,7 +15,7 @@ func (e *Engine) LoadMaterials(filepath string) {
 	}
 
 	materials := rl.LoadMaterials(filepath)
-	matIDs    := make([]string, 0)
+	matIDs := make([]string, 0)
 
 	unloadOnError := func() {
 		for _, mat := range materials {
