@@ -5,15 +5,7 @@ import (
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-const (
-	windowWidth = 1240
-	windowHeight = 720
-)
-
 func runtimeHandler(e *b.Engine) {
-	rl.InitWindow(windowWidth, windowHeight, "Boxes Editor")
-	defer rl.CloseWindow()
-
 	camera := rl.Camera3D{}
 	camera.Position = rl.NewVector3(0, 2, 0)
 	camera.Target   = rl.NewVector3(0, 0, 0)
