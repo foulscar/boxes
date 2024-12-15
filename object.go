@@ -51,7 +51,7 @@ func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
 	if err := csv.Unmarshal(bytes, &fileEntries); err != nil {
 		log.Fatal("'", pointerFilePath, "' is an invalid object pointer file: ", err)
 	}
-	println(fileEntries)
+	println(fileEntries[0])
 	for _, entry := range fileEntries {
 		e.LoadObjectFile(path.Join(path.Dir(pointerFilePath), entry.filePath), entry.objectID)
 	}
