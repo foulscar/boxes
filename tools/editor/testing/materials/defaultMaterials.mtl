@@ -5,3 +5,11 @@ Ks 0.00 0.00 0.00    # Specular color (none for a matte look)
 Ns 10.0              # Specular exponent (low for matte surface)
 d 0.2               # Opacity (75% opaque)
 illum 2              # Illumination model (basic shading)
+
+newmtl brown
+Ka 0.2 0.1 0.0    # Ambient color (dark brown)
+Kd 0.5 0.25 0.1   # Diffuse color (brown)
+Ks 0.3 0.2 0.1    # Specular color (lighter brown)
+Ns 32.0           # Specular exponent (shininess)
+d 1.0             # Transparency (1.0 = opaque)
+illum 2           # Illumination model (Phong shading)

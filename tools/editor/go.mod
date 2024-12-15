@@ -3,7 +3,7 @@ module github.com/foulscar/boxes/tools/editor
 go 1.23.2
 
 require (
-	github.com/foulscar/boxes v0.0.0-20241215211835-2c76ee1ad13e
+	github.com/foulscar/boxes v0.0.0-20241215221407-df779811939c
 	github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c
 )
 

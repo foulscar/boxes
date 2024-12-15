@@ -7,7 +7,7 @@ import (
 
 func runtimeHandler(e *b.Engine) {
 	camera := rl.NewCamera3D(
-		rl.NewVector3(10, 10, 10),
+		rl.NewVector3(1, 10, 1),
 		rl.NewVector3(0, 0, 0),
 		rl.NewVector3(0, 1, 0),
 		60,
