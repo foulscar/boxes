@@ -38,9 +38,7 @@ func (e *Engine) LoadMaterials(filepath string) {
 		log.Fatal("Could not parse material names in '", filepath, "'")
 	}
 
-	println(rl.IsMaterialValid(materials[0]))
-	println(matIDs[0])
-	for _, matID := range matIDs {
-		e.ResourceManager.Materials[matID] = materials[0]
+	for i, matID := range matIDs {
+		e.ResourceManager.Materials[matID] = &materials[i]
 	}
 }
