@@ -53,6 +53,7 @@ func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
 	}
 	for _, entryPointer := range fileEntries {
 		entry := *entryPointer
+		println(entry.filePath)
 		if entry.objectID == "" || entry.filePath == "" {
 			log.Fatal("'", pointerFilePath, "' is an invalid object pointer file")
 		}
