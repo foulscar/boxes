@@ -10,6 +10,7 @@ import (
 )
 
 func (e *Engine) LoadMaterials(filepath string) {
+	println(len(e.ResourceManager.Materials))
 	if e.ResourceManager.Materials == nil {
 		log.Fatal("The Resource Manager has not been initialized")
 	}
