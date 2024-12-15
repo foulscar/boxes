@@ -18,6 +18,7 @@ func (e Engine) initResourceManager() {
 		Objects:   make(map[string]Object),
 		Materials: make(map[string]rl.Material),
 	}
+	println("debug1")
 
 	e.ResourceManager = &rm
 }

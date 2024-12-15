@@ -5,11 +5,11 @@ import (
         rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-func (scn *scene) drawGrid(numLines float32, color rl.Color, color2 rl.Color) {
+func (e *editor) drawGrid(numLines float32, color rl.Color, color2 rl.Color) {
 	pos := rl.NewVector3(
-		float32(math.Round(float64(scn.camera.Position.X))),
-		float32(scn.gridYLevel),
-		float32(math.Round(float64(scn.camera.Position.Z))),
+		float32(math.Round(float64(e.scene.Camera.Position.X))),
+		float32(e.gridYLevel),
+		float32(math.Round(float64(e.scene.Camera.Position.Z))),
 	)
 	for i := -numLines - 2.0; i <= numLines+2.0; i++ {
 		rl.DrawLine3D(rl.NewVector3(pos.X-numLines, pos.Y, pos.Z+i), rl.NewVector3(pos.X+numLines, pos.Y, pos.Z+i), color)
