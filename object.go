@@ -39,7 +39,6 @@ type objectFileBoxDefinition struct {
 type objectPointerFileEntry struct {
 	objectID string `csv:"objID"`
 	filePath string `csv:"file"`
-	any string `csv:",any"`
 }
 
 func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
@@ -48,12 +47,11 @@ func (e *Engine) LoadObjectsFromPointerFile(pointerFilePath string) {
 		log.Fatal("Could not read object pointer file: '", pointerFilePath, "': ", err)
 	}
 	
-	fileEntries := make([]objectPointerFileEntry, 0)
+	fileEntries := make([]*objectPointerFileEntry, 0)
 	if err := csv.Unmarshal(bytes, &fileEntries); err != nil {
 		log.Fatal("'", pointerFilePath, "' is an invalid object pointer file: ", err)
 	}
 	for _, entry := range fileEntries {
-		println(entry.any)
 		if entry.objectID == "" || entry.filePath == "" {
 			log.Fatal("'", pointerFilePath, "' is an invalid object pointer file")
 		}
@@ -70,7 +68,7 @@ func (e *Engine) LoadObjectFile(filepath, objectID string) {
 		log.Fatal("Could not read object file: '", filepath, "': ", err)
 	}
 
-	boxDefs := make([]objectFileBoxDefinition, 0)
+	boxDefs := make([]*objectFileBoxDefinition, 0)
 	if err := csv.Unmarshal(bytes, &boxDefs); err != nil {
 		log.Fatal("'", filepath, "' is an invalid object file: ", err)
 	}
