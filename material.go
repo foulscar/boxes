@@ -10,7 +10,6 @@ import (
 )
 
 func (e *Engine) LoadMaterials(filepath string) {
-	println(e.ResourceManager)
 	if e.ResourceManager.Materials == nil {
 		log.Fatal("The Resource Manager has not been initialized")
 	}
@@ -44,7 +43,7 @@ func (e *Engine) LoadMaterials(filepath string) {
 		log.Fatal("Could not parse material names in '", filepath, "'")
 	}
 
-	for _ = range matIDs {
-		e.ResourceManager.Materials["test"] = rl.LoadMaterialDefault()
+	for i, matID := range matIDs {
+		e.ResourceManager.Materials[matID] = materials[i]
 	}
 }
