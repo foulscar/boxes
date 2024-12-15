@@ -11,7 +11,10 @@ type ResourceManager struct {
 	Materials map[string]rl.Material
 }
 
-func (e *Engine) initResourceManager() {
+func (e *Engine) InitResourceManager() {
+	if e.ResourceManager != nil {
+		e.ResourceManager.Unload()
+	}
 	rm := ResourceManager{
 		IdentityMatrix: rl.MatrixIdentity(),
 		CubeMesh:  rl.GenMeshCube(1, 1, 1),
@@ -22,7 +25,7 @@ func (e *Engine) initResourceManager() {
 	e.ResourceManager = &rm
 }
 
-func (rm ResourceManager) unload() {
+func (rm ResourceManager) Unload() {
 	rl.UnloadMesh(&rm.CubeMesh)
 	for _, mat := range rm.Materials {
 		rl.UnloadMaterial(mat)

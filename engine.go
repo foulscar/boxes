@@ -7,7 +7,7 @@ type Engine struct {
 
 func LoadEngine() *Engine {
 	e := &Engine{}
-	e.initResourceManager()
+	e.InitResourceManager()
 
 	return e
 }
@@ -17,7 +17,7 @@ func (e *Engine) SetRuntimeHandler(handler func(*Engine)) {
 }
 
 func (e *Engine) Run() {
-	defer e.ResourceManager.unload()
+	defer e.ResourceManager.Unload()
 
 	e.RuntimeHandler(e)
 }
