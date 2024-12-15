@@ -5,7 +5,6 @@ go 1.23.2
 require (
 	github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c
 	github.com/gocarina/gocsv v0.0.0-20240520201108-78e41c74b4b1
-	github.com/mokiat/go-data-front v0.2.0
 )
 
 require (
