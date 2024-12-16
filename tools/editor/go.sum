@@ -22,6 +22,8 @@ github.com/foulscar/boxes v0.0.0-20241216003245-2fa4f9a74c8c h1:/2gg/3gO9kJdlXcQ
 github.com/foulscar/boxes v0.0.0-20241216003245-2fa4f9a74c8c/go.mod h1:ryRTRZSn4erE8YW8Ztgv3ZKeCHtOdttd+X4eCEVhwsw=
 github.com/foulscar/boxes v0.0.0-20241216015751-9d51c381edf2 h1:3Ok3ZehyavlOxpsi1izhPYfrhQyuan0IDNRycQZY5hI=
 github.com/foulscar/boxes v0.0.0-20241216015751-9d51c381edf2/go.mod h1:ryRTRZSn4erE8YW8Ztgv3ZKeCHtOdttd+X4eCEVhwsw=
+github.com/foulscar/boxes v0.0.0-20241216022951-8668d8efdef7 h1:c7p6/EwmcuJPYLln/3Bov/t4TqTrSc40EwgGzNrhMxI=
+github.com/foulscar/boxes v0.0.0-20241216022951-8668d8efdef7/go.mod h1:ryRTRZSn4erE8YW8Ztgv3ZKeCHtOdttd+X4eCEVhwsw=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c h1:mgrcIr6he2BCrCDVWRm7PUw5Ukx5ZUyCnAcAPN+y8cQ=
 github.com/gen2brain/raylib-go/raylib v0.0.0-20241207114308-a9ad86d5018c/go.mod h1:BaY76bZk7nw1/kVOSQObPY1v1iwVE1KHAGMfvI6oK1Q=
 github.com/go-logr/logr v1.4.1 h1:pKouT5E8xu9zeFC39JXRDukb6JFQPXM5p5I91188VAQ=

@@ -84,9 +84,9 @@ func (e *Engine) LoadObjectFile(filepath, objectID string) {
 		}
 		matrix := e.ResourceManager.IdentityMatrix
 
-		matrix = rl.MatrixMultiply(matrix, rl.MatrixTranslate(boxDef.PosX, boxDef.PosY, boxDef.PosZ))
 		matrix = rl.MatrixMultiply(matrix, rl.MatrixScale(boxDef.ScaleX, boxDef.ScaleY, boxDef.ScaleZ))
-		matrix = rl.MatrixMultiply(matrix, rl.MatrixRotate(rl.NewVector3(boxDef.RotX * rl.Deg2rad, boxDef.RotY * rl.Deg2rad, boxDef.RotZ * rl.Deg2rad), 1))
+		matrix = rl.MatrixMultiply(matrix, rl.MatrixRotateXYZ(rl.NewVector3(boxDef.RotX * rl.Deg2rad, boxDef.RotY * rl.Deg2rad, boxDef.RotZ * rl.Deg2rad)))
+		matrix = rl.MatrixMultiply(matrix, rl.MatrixTranslate(boxDef.PosX, boxDef.PosY, boxDef.PosZ))
 
 		obj.Boxes[i] = ObjectBox{
 			Matrix:   matrix,
