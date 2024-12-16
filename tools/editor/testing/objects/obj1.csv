@@ -1,3 +1,5 @@
 matID,posX,posY,posZ,scaleX,scaleY,scaleZ,rotX,rotY,rotZ
-beige,0,0.5,0,0.5,2,0.5,90,0,90
-brown,5,0.5,0,0.5,2,0.5,0,0,0
+# beige,-2.75,0.5,0,0.5,3,0.5,0,0,0
+# brown,0,0.5,0,0.5,3,0.5,0,45,0
+# beige,2.75,0.5,0,0.5,3,0.5,0,0,0
+brown,0,1,0,1,2,1,0,0,0
